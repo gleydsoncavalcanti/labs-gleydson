@@ -1,0 +1,20 @@
+input[type="text"] {
+    @apply flex-1 border px-4 py-2 rounded;
+  }
+  
+  button[type="submit"] {
+    @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600;
+  }
+  
+  button {
+    @apply text-red-500 hover:underline;
+  }
+  
+  .form-row {
+    @apply flex flex-col md:flex-row gap-4;
+  }
+  
+  .book-item {
+    @apply flex justify-between items-center bg-gray-50 p-3 rounded shadow-sm;
+  }
+  
