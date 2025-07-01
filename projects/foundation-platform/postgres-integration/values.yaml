@@ -1,0 +1,15 @@
+postgresIntegration:
+  useExternalSecret: true
+  host: "card.tech"
+  port: "5432"
+  username: "datadog"
+  dbname: "card"
+  name: "card"
+  dbm: "false"
+  tags:
+    costCenter: "0000000"
+    env: "staging"
+    project: "teste"
+    owner: "teste"
+    support: "teste"
+  customQueries: []
