@@ -1,0 +1,15 @@
+postgresIntegration:
+  useExternalSecret: true
+  host: "obersability2.example"
+  port: "5432"
+  username: "datadog"
+  dbname: "obserevability2"
+  name: "obserevability2"
+  dbm: "false"
+  tags:
+    costCenter: "0000000"
+    env: "staging"
+    project: "teste"
+    owner: "teste"
+    support: "teste"
+  customQueries: []
