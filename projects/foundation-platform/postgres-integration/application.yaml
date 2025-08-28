@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: card-postgres-integration
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: .
+  labels:
+    project: card-postgres-integration
+    env: staging
+    type: integrations
+    cluster: tools-prd
+spec:
+  project: card-postgres-integration
+  source:
+    repoURL: 'https://github.com/gleydsoncavalcanti/labs-gleydson'
+    path: charts/postgres-integration/card
+    targetRevision: main
+    helm:
+      valueFiles:
+      - values.yaml
+  destination:
+    name: tools-prd
+    namespace: datadog
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true

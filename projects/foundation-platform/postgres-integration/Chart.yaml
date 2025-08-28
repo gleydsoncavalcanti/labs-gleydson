@@ -1,0 +1,13 @@
+apiVersion: v2
+name: postgres-integration-card
+description: Chart que usa postgresIntegration como subchart
+type: application
+version: 0.1.0
+maintainers:
+  - name: gleydsoncavalcanti
+    email: gleydson86@gmail.com
+
+dependencies:
+  - name: postgresIntegration
+    version: "1.0.3"               
+    repository: "https://github.com/stone-payments/observability-helm-charts/tree/main/charts/observability-datadog-integrations-postgres"  

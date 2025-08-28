@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: card-postgres-integration
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: 
+  sourceRepos:
+  - 'https://github.com/gleydsoncavalcanti/labs-gleydson'
+  destinations:
+  - namespace: datadog
+    name: tools-prd
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceBlacklist:
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  orphanedResources:
+    warn: false
+
+  roles:
+  - name: datadog
+    description: Sync privileges for Postgres Integration
+    policies:
+      - p, proj:datadog:datadog, applications, *, datadog/*, allow
+    groups:
+      - 6d71f525-97aa-4ac8-8a20-e181e3d3f94b
