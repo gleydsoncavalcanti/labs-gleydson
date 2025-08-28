@@ -1,0 +1,15 @@
+postgresIntegration:
+  useExternalSecret: true
+  host: "teste-template"
+  port: "5432"
+  username: "datadog"
+  dbname: "teste-template"
+  name: "teste-template"
+  dbm: "false"
+  tags:
+    costCenter: "0000000"
+    env: "staging"
+    project: "teste"
+    owner: "teste"
+    support: "teste"
+  customQueries: []
